@@ -189,7 +189,7 @@
             </div>
         </div>
 
-        <p id="copyright">Copyright © Your Website 2023</p>
+        <p id="copyright">Copyright © Your Website <span id="current-year"></span></p>
     </footer>
 
     <!-- FOOTER -->
@@ -200,6 +200,9 @@
         menuBtn.addEventListener('click', () => {
             navUl.classList.toggle('show-menu');
         });
+        
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
