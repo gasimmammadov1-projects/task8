@@ -21,11 +21,11 @@
         <nav class="header-font">
             <div class="container nav-cont">
                 <a href="#page-top" id="logo">START BOOTSTRAP</a>
-                <ul>
+                <button class="button" id="menu-btn">MENU <i class="fa-solid fa-bars"></i></button>
+                <ul id="nav-links">
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-                    <li> <button class="button">MENU <i class="fa-solid fa-bars"></i></button> </li>
                 </ul>
             </div>
         </nav>
@@ -195,8 +195,8 @@
     <!-- FOOTER -->
 
     <script>
-        const menuBtn = document.querySelector('.nav-cont ul li:last-of-type button');
-        const navUl = document.querySelector('.nav-cont ul');
+        const menuBtn = document.getElementById('menu-btn');
+        const navUl = document.getElementById('nav-links');
         menuBtn.addEventListener('click', () => {
             navUl.classList.toggle('show-menu');
         });

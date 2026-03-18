@@ -113,6 +113,7 @@ nav ul a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-cont ul {
@@ -123,34 +124,29 @@ nav ul a:hover {
     padding: 20px;
 }
 
-.nav-cont ul li:last-of-type {
+#menu-btn {
     display: none;
 }
 
 @media(max-width:992px) {
-    .nav-cont {
-        flex-wrap: wrap;
+    #menu-btn {
+        display: block;
     }
     .nav-cont ul {
+        display: none;
         width: 100%;
-        justify-content: flex-end;
-    }
-    .nav-cont ul.show-menu {
         flex-direction: column;
-        width: 100%;
         margin-top: 15px;
     }
-    .nav-cont ul.show-menu li {
-        display: block;
-        margin: 5px 0;
-        text-align: center;
+    .nav-cont ul.show-menu {
+        display: flex;
     }
     .nav-cont ul li {
-        display: none;
+        text-align: center;
+        margin: 10px 0;
     }
-    .nav-cont ul li:last-of-type {
-        display: block;
-        margin-left: auto;
+    .nav-cont ul li a {
+        padding: 5px;
     }
 }
 
