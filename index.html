@@ -139,18 +139,22 @@
             </div>
 
             <form action="">
-                <input type="text" id="name">
-                <label for="name" id="l1">Full name</label>
-                <br>
-                <input type="email" id="email">
-                <label for="email" id="l2">Email address</label>
-                <br>
-                <input type="tel" id="tel">
-                <label for="tel" id="l3">Phone number</label>
-                <br>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                <label for="message" id="l4">Message</label>
-                <br>
+                <div class="form-group">
+                    <input type="text" id="name" placeholder=" ">
+                    <label for="name">Full name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder=" ">
+                    <label for="email">Email address</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="tel" placeholder=" ">
+                    <label for="tel">Phone number</label>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder=" "></textarea>
+                    <label for="message">Message</label>
+                </div>
                 <button class="button">Send</button>
             </form>
         </div>
@@ -190,8 +194,12 @@
 
     <!-- FOOTER -->
 
-
-    <!-- ================================================== -->
-
+    <script>
+        const menuBtn = document.querySelector('.nav-cont ul li:last-of-type button');
+        const navUl = document.querySelector('.nav-cont ul');
+        menuBtn.addEventListener('click', () => {
+            navUl.classList.toggle('show-menu');
+        });
+    </script>
 </body>
 </html>

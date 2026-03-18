@@ -128,12 +128,29 @@ nav ul a:hover {
 }
 
 @media(max-width:992px) {
+    .nav-cont {
+        flex-wrap: wrap;
+    }
+    .nav-cont ul {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    .nav-cont ul.show-menu {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .nav-cont ul.show-menu li {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
     .nav-cont ul li {
         display: none;
     }
-
     .nav-cont ul li:last-of-type {
         display: block;
+        margin-left: auto;
     }
 }
 
@@ -165,14 +182,17 @@ section:first-of-type {
 }
 
 .hero-cont {
-    height: 770px;
+    padding: 180px 0 100px;
     color: var(--white);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-cont img {
     width: 250px;
-    margin-top: 200px;
+    margin: 0 auto 20px;
 }
 
 .hero-cont .line {
@@ -252,12 +272,12 @@ section:nth-child(3) {
     background-color: var(--green);
     position: absolute;
     border-radius: 10px;
-    opacity: 0.8;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .item:hover::before {
-    display: block;
+    opacity: 0.8;
 }
 
 .item i {
@@ -267,11 +287,12 @@ section:nth-child(3) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .item:hover i {
-    display: block;
+    opacity: 1;
 }
 
 
@@ -393,85 +414,68 @@ section:nth-child(4) {
     font-size: 25px;
     text-align: left;
     margin: auto;
-    color:var(--dark-grey);
-    position: relative;
+    color: var(--dark-grey);
     width: 60%;
 }
 
 @media (max-width:992px) {
     .contact-cont form {
-        width: 80%;
+        width: 100%;
     }
 }
 
 
-.contact-cont form input {
-    font-size: 20px;
-    margin-top: 26px;
-    margin-bottom: 45px;
-    width: 100%;
-    height: 60px;
-    border: none; 
-    border-bottom: 2px solid var(--grey); 
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
 }
 
-input:focus {
-    outline: none;
-}
-
-
-.contact-cont form textarea {
+.form-group input, 
+.form-group textarea {
     font-size: 20px;
-    margin-top: 30px;
-    height: 90px;
     width: 100%;
-    resize: vertical;
-    border: none; 
+    border: none;
     border-bottom: 2px solid var(--grey);
+    padding: 20px 0 10px;
+    background: transparent;
+    color: var(--blue);
 }
 
-textarea:focus {
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
     outline: none;
+    border-bottom-color: var(--green);
 }
 
-textarea:focus + label {
-    font-size:15px ;
-    transition: 0.1s;
-}
-
-.contact-cont form label {
+.form-group label {
     position: absolute;
+    top: 20px;
     left: 0;
-    transition: 0.1s;
+    font-size: 20px;
+    color: var(--dark-grey);
+    transition: all 0.2s ease;
+    pointer-events: none;
 }
 
-#l1 {
-    top: 25px;
-}
-
-#l2 {
-    top: 155px;
-}
-
-#l3 {
-    top: 285px;
-}
-
-#l4 {
-    top: 400px;
-}
-
-input:focus + label {
-    font-size:15px ;
-    transition: 0.1s;
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+    top: -5px;
+    font-size: 15px;
+    color: var(--green);
 }
 
 .contact-cont form button {
-    width: 100px;
+    width: 120px;
     height: 55px;
     padding-top: 15px;
     font-size: 20px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 
@@ -531,22 +535,27 @@ footer {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.social a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .social a i {
-    color: var(--white);
-    position: absolute;
-    top: 50%;
-    left: 31%;
     font-size: 22px;
 }
 
 .social:hover {
     background-color: var(--white);
-}
-
-.social:hover i{
     color: var(--dark-blue);
 }
 
